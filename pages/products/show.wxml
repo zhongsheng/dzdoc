@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view id="main" class="product-show">
+
+  <block wx:if="{{logs.length > 0}}">
+  <view class="item-box" wx:for="{{logs}}">
+     <view class="date">{{item.updated_at}}</view>
+
+     <view class="t2">
+       {{item.username}}
+       <text class="span"> 出库 </text>
+       <text class="number"> [ {{item.number}} ] </text>
+     </view>
+
+     <view class="row status-box">
+       <view class="span info">{{item.info}}</view>
+     </view>
+  </view>
+  </block>
+
+  <view class="{{empty}} f1 flex-justify-center">
+
+    <image class="{{empty}}" style="width:70%" src="../../assets/images/empty.png"></image>
+    <button class="{{empty}}" bindtap="tapBack">空空的记录 - 返回</button>
+
+  </view>
+
+</view>

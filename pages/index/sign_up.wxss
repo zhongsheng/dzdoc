@@ -1,0 +1,10 @@
+/* pages/index/sign_up.wxss */
+.section input {
+  margin: 5px;
+  border: 1px solid silver;
+  padding: 5px;
+  border-radius: 2px;
+}
+button {
+  width: 50%;
+}

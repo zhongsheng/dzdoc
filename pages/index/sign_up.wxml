@@ -1,0 +1,19 @@
+<view class="container">
+<text>{{tip}}</text>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+     <input name="username" placeholder="用户名" auto-focus/>
+    </view>
+
+    <view class="section">
+      <input name="password" placeholder="密码" value="{{password}}" focus="focus" password="true"/>
+    </view>
+
+    <view class="section">
+      <button formType="submit">提交</button>
+    </view>
+
+    <view class='section'>{{error}}</view>
+  </form>
+
+</view>

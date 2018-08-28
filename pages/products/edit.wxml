@@ -1,0 +1,28 @@
+
+<view id="main" class="product-edit">
+  <text>{{tip}}</text>
+  <form bindsubmit="formSubmit">
+
+    <view class="section">
+      <input type="number" class="input-text" name="products_log[number]" placeholder="数量" auto-focus/>
+    </view>
+    <view class="section">
+      <input type="digit" class="input-text" name="products_log[price]" value='0' placeholder="价格" />
+    </view>
+    <view class="section">
+      <textarea class="input-area" name="products_log[info]" placeholder="备注必填" />
+    </view>
+
+
+    <view class="hide">
+      <input name="products_log[product_id]" value="{{productID}}" />
+    </view>
+
+    <view class="section">
+      <button formType="submit">提交</button>
+    </view>
+
+    <view class='section'>{{error}}</view>
+  </form>
+
+</view>

@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view id='main' scroll-y="true">
+  <view wx:for="{{products}}" class="item-box" >
+    <view class="date">{{item.updated_at}}</view>
+    <view id="{{item.id}}" class="t2" bindtap='tapShow'>{{item.name}}</view>
+
+    <view class="row status-box">
+      <view  class="span">库存:
+        <block wx:if="{{item.stock<10}}">
+          <text class="small-number"> [ {{item.stock}} ] </text>
+        </block>
+
+
+        <block wx:if="{{item.stock>=10}}">
+          <text class="number"> [ {{item.stock}} ] </text>
+        </block>
+
+
+      </view>
+      <view  class='btn' id="{{item.id}}" bindtap='tapEdit'>出库</view>
+    </view>
+
+  </view>
+
+</view>

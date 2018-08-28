@@ -1,0 +1,22 @@
+<view id="main" class="dashboard">
+  <view class="wrap">
+
+    <view class="t1">{{username}}</view>
+    <view class="welcome span">欢迎使用丹中办公系统</view>
+    <view class="line"></view>
+
+    <view class="section">
+
+      <view class="f1 flex-align-center">
+
+        <image class="icon" mode="aspectFit" src="../../assets/images/checklist.png"></image>
+
+
+        <text class="t4">最新动态</text></view>
+
+
+    </view>
+
+
+  </view>
+</view>

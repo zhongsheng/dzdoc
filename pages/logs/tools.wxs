@@ -1,0 +1,7 @@
+var plus_one = function(arg){
+  return arg + 1
+}
+
+module.exports = {
+  plus_one: plus_one
+}
