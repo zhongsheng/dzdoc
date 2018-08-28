@@ -7,7 +7,7 @@
       <input type="number" class="input-text" name="products_log[number]" placeholder="数量" auto-focus/>
     </view>
     <view class="section">
-      <input type="digit" class="input-text" name="products_log[price]" value='0' placeholder="价格" />
+      <input type="digit" class="input-text" name="products_log[price]" placeholder="价格" />
     </view>
     <view class="section">
       <textarea class="input-area" name="products_log[info]" placeholder="备注必填" />
