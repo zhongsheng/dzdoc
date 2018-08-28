@@ -1,44 +1,103 @@
+/******************************* Container *******************************/
 #main {
-
     margin: 5;
     padding: 5px;
 }
 
-.row {
-    flex-direction:row;
-    display: flex;
-    padding: 5px;
-}
 .item-box {
     border: 2px solid #4F4F4F;
     margin: 5px;
     padding: 5px 10px;
     border-radius: 5px;
 }
-.date {
-    font-size: 10px;
-    text-align: right;
-    border-bottom: 1px solid #DDD;
+
+/******************************* Layout ********************************/
+.flex-justify-left {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-flow:row;
+}
+
+.flex-justify-center {
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-align-center {
+    display: flex;
+    flex-flow:row wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.row {
+    flex-direction: row;
+    display: flex;
+    padding: 5px;
+}
+
+/* float been deprecated */
+/* .left { */
+/*     float: left; */
+/* } */
+
+/* .right { */
+/*     float: right; */
+/* } */
+
+.hide {
+    /* this rule can't using with VIEW  */
+    display: none;
+}
+
+.show {
+    display: block;
+}
+/******************************** Style *********************************/
+.t1 {
+    font-size: 30px;
+    font-weight: lighter;
 }
 
 .t2 {
     font-size: 18px;
     padding: 10px 0px;
+}
+.t3 {}
+.t4 {}
 
+.span {
+    color: #999;
+}
+.info {
+    font-size: 12px;
+}
+
+/******************************* Garge *********************************/
+.line {
+    height: 1px;
+    width: 100%;
+    margin: 5px 0;
+    border-bottom: 1px solid #DDD;
+}
+.icon {
+    width: 30px; height: 30px;
+}
+
+.date {
+    font-size: 10px;
+    text-align: right;
+}
+
+.more {
     background-image: url("http://img.dzunion.cn/more.png");
     background-position: center right;
     background-repeat:no-repeat;
-    border-bottom: 1px solid #DDD;
 }
-
-.product-show .t2 {
-    background: none;
-}
-
-.product-edit form {
-    width: 70%;
-}
-
 
 .number {
     color: green;
@@ -48,13 +107,6 @@
     color: red;
     font-weight:bold;
 }
-.span {
-    color: #999;
-}
-.info {
-    font-size: 12px;
-
-}
 
 .btn {
     font-size: 15px;
@@ -62,27 +114,13 @@
     color:#CC7B5A;
 }
 
-.status-box{
+.status-box {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
 }
 
-.left {
-    float: left;
-}
-.right {
-    float: right;
-}
-.hide {
-    /* this rule can't using with VIEW  */
-    display: none;
-}
-.show {
-    display: block;
-}
-
-/* Form */
+/******************************* Form *********************************/
 form .input-text, form .input-area {
     border: 2px solid #4F4F4F;
     margin: 5px;
@@ -94,52 +132,12 @@ form .input-area {
 
 
 }
-.icon {
-    width: 30px; height: 30px;
+
+/************************* Page custom *********************************/
+.product-edit form {
+    width: 70%;
 }
 
-.t1 {
-    font-size: 30px;
-    font-weight: lighter;
-}
-.t4 {
-
-}
-
-
-.f1 {
-    font-size: 17px;
-    color:#CC7B5A;
-    width: 100%;
-    height: 50px;
-    display: flex;
-
- }
-
-
-.flex-justify-left {
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    flex-flow:row;
-}
-.flex-justify-center {
-    flex-flow:row wrap;
-    justify-content:center;
-    align-items: center;
-
-}
-.flex-align-center {
-    align-content: center;
-    align-items: center;
-}
-
-.line {
-    height: 1px;
-    width: 100%;
-    margin: 5px 0;
-    border-bottom: 1px solid #DDD;
-}
 /* Home dashboard */
 
 .dashboard .wrap {

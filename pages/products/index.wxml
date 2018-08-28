@@ -2,7 +2,10 @@
 <view id='main' scroll-y="true">
   <view wx:for="{{products}}" class="item-box" >
     <view class="date">{{item.updated_at}}</view>
-    <view id="{{item.id}}" class="t2" bindtap='tapShow'>{{item.name}}</view>
+
+    <view class="line"></view>
+    <view id="{{item.id}}" class="t2 more" bindtap='tapShow'>{{item.name}}</view>
+    <view class="line"></view>
 
     <view class="row status-box">
       <view  class="span">库存:

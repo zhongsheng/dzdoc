@@ -17,7 +17,7 @@
   </view>
   </block>
 
-  <view class="{{empty}} f1 flex-justify-center">
+  <view class="flex-justify-center">
 
     <image class="{{empty}}" style="width:70%" src="../../assets/images/empty.png"></image>
     <button class="{{empty}}" bindtap="tapBack">空空的记录 - 返回</button>

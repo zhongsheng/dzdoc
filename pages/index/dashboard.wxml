@@ -7,7 +7,7 @@
 
     <view class="section">
 
-      <view class="f1 flex-align-center">
+      <view class="flex-align-center">
 
         <image class="icon" mode="aspectFit" src="../../assets/images/checklist.png"></image>
 
