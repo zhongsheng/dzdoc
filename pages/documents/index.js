@@ -2,21 +2,39 @@ const app = getApp()
 const http = require('../../utils/http.js')
 var thisPage
 
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    username: ''
+    docs: []
+  },
+  tapShow: function (e) {
+    wx.navigateTo({
+      url: 'fold?id=' + e.currentTarget.id + '&name=' + e.currentTarget.dataset.productName,
+    });
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    wx.showTabBar({})
-
-    this.setData({
-      username: app.authData.username
+    thisPage = this
+    http.request({
+      url: app.requestUrl + '/collections.json',
+      success: function(res){
+        // for (let n in res.data) {
+        //   // only show the date
+        //   res.data[n].updated_at = res.data[n].updated_at.replace(/T.*/,'');
+        // }
+        thisPage.setData({
+          docs: res.data
+        })
+      }
     })
+
 
   },
 

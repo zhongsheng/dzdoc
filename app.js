@@ -24,7 +24,7 @@ App({
     })
   },
 
-  requestUrl: 'http://crm.dzunion.cn',
+  requestUrl: 'https://crm.dzunion.cn',
 
   authData: {
     user_id: '',

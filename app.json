@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/index/sign_up",
     "pages/index/dashboard",
-    "pages/logs/logs",
+    "pages/documents/index",
+    "pages/documents/fold",
     "pages/products/index",
     "pages/products/show",
     "pages/products/edit"
@@ -31,7 +32,7 @@
         "selectedIconPath": "./assets/images/stock-s.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/documents/index",
         "text": "文库",
         "iconPath": "./assets/images/doc.png",
         "selectedIconPath": "./assets/images/doc-s.png"
