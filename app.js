@@ -2,10 +2,19 @@ const http = require('./utils/http.js')
 
 App({
   onLaunch: function (options) {
+    
     wx.hideTabBar({})
-
+    var thisApp = this;
     wx.getSetting({
       success: res => {
+        wx.getSystemInfo({
+          success: function(res) {
+            if(res.brand == 'devtools'){
+              thisApp.requestUrl = "http://127.0.0.1"
+            }
+          },
+        })
+        
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: res => {
@@ -24,8 +33,8 @@ App({
     })
   },
 
-  requestUrl: 'https://crm.dzunion.cn',
-
+  requestUrl: "https://crm.dzunion.cn",
+  
   authData: {
     user_id: '',
     username: '',

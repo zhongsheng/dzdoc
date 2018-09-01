@@ -1,7 +1,10 @@
 <!--index.wxml-->
 <view id='main' scroll-y="true">
   <view wx:for="{{products}}" class="item-box" >
-    <view class="date">{{item.updated_at}}</view>
+
+
+
+    <view class="date"><text class="alert" wx:if="{{item.overtime}}"> 已过 </text>  效期 : {{item.expiration}}</view>
 
     <view class="line"></view>
     <view id="{{item.id}}" class="t2 more" bindtap='tapShow'>{{item.name}}</view>
@@ -15,7 +18,7 @@
 
 
         <block wx:if="{{item.stock>=10}}">
-          <text class="number"> [ {{item.stock}} ] </text>
+          <text class="number"> [ {{item.stock}} ] </text> {{item.unit}}
         </block>
 
 
