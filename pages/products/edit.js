@@ -17,6 +17,19 @@ Page({
       url: app.requestUrl + '/wechat_v1/create',
       data: e.detail.value,
       success: function(res){
+        if(res.statusCode == 500){
+          wx.showModal({
+            title: '提示',
+            content: "长时间没用,点击确定,自动刷新",
+            showCancel: false,
+            success: function (show_res) {
+              wx.redirectTo({
+                url: '../index/index',
+              })
+            }
+          });
+  
+        }
         console.log(res)
         if(res.data.product_id > 0){
           wx.showModal({

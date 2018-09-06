@@ -28,10 +28,6 @@ Page({
     http.request({
       url: app.requestUrl + '/products.json',
       success: function(res){
-        for (let n in res.data) {
-          // only show the date
-          res.data[n].updated_at = res.data[n].updated_at.replace(/T.*/,'');
-        }
         thisPage.setData({
           products: res.data
         })

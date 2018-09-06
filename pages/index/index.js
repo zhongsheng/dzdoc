@@ -20,7 +20,14 @@ Page({
               code: res.code
             },
             success: function (res) {
-
+              wx.getUserInfo({
+                success: res => {
+                  // Initialize session arguments
+                  app.globalData.userInfo = res.userInfo
+                  app.authData.encrypted_data = res.encryptedData
+                  app.authData.iv = res.iv
+                }
+              })
               if(res.data.error){
                 // Binding account
                 wx.navigateTo({
@@ -47,7 +54,6 @@ Page({
         }
       }
     })
-
 
   },
   getUserInfo: function(e) {

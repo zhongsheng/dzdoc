@@ -1,5 +1,10 @@
 
 
+function updateSession(){
+  wx.redirectTo({
+    url: '../index/index',
+  })
+}
 function request(obj) {
   wx.request({
     url: obj.url,
@@ -18,6 +23,7 @@ function request(obj) {
     },
     fail: function (res) {
       console.log(res)
+      updateSession()
       obj.fail(res)
 
     }
@@ -25,10 +31,14 @@ function request(obj) {
 }
 
 function post(obj) {
-  const app = getApp()
+  var thisApp = getApp()
+  if(thisApp.authData.iv.length < 10){
+    updateSession()
+
+  }
   wx.request({
     url: obj.url,
-    data: Object.assign( obj.data, app.authData),
+    data: Object.assign( obj.data, thisApp.authData),
     method:"POST",
     header: {
       cookie: wx.getStorageSync('cookie'),
@@ -44,6 +54,8 @@ function post(obj) {
 
     },
     fail: function (res) {
+      updateSession()
+      console.log(res)
       obj.fail(res)
 
     }

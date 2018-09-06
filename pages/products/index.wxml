@@ -13,7 +13,7 @@
     <view class="row status-box">
       <view  class="span">库存:
         <block wx:if="{{item.stock<10}}">
-          <text class="small-number"> [ {{item.stock}} ] </text>
+          <text class="small-number"> [ {{item.stock}} ] </text> {{item.unit}}
         </block>
 
 

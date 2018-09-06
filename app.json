@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/index/sign_up",
     "pages/index/dashboard",
+    "pages/index/webview",
     "pages/documents/index",
     "pages/documents/fold",
     "pages/products/index",
