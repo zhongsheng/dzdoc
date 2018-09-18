@@ -1,0 +1,13 @@
+<view id='main' scroll-y="true">
+  <view wx:for="{{workflow}}" wx:for-item="work" >
+
+  <view wx:for="{{work['files']}}" class="flex-align-center" >
+
+    <image class="icon" mode="aspectFit" src="../../assets/images/pdf.png"></image>
+    <view id="{{item.url}}" class="btn" bindtap='openFile'>{{item.name}}</view>
+
+  </view>
+
+  </view>
+
+</view>

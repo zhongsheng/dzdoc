@@ -8,7 +8,9 @@
     "pages/documents/fold",
     "pages/products/index",
     "pages/products/show",
-    "pages/products/edit"
+    "pages/products/edit",
+    "pages/projects/index",
+    "pages/projects/fold"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -33,8 +35,8 @@
         "selectedIconPath": "./assets/images/stock-s.png"
       },
       {
-        "pagePath": "pages/documents/index",
-        "text": "文库",
+        "pagePath": "pages/projects/index",
+        "text": "项目",
         "iconPath": "./assets/images/doc.png",
         "selectedIconPath": "./assets/images/doc-s.png"
 
