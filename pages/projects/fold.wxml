@@ -10,14 +10,14 @@
     <view wx:for="{{work['files']}}">
       <view class="line"></view>
 
-      <view class="row more flex-align-center">
+      <view id="{{item.url}}"  class="row more flex-align-center" bindtap='openFile'>
         <image class="icon" mode="aspectFit" src="../../assets/images/pdf.png"></image>
-        <view id="{{item.url}}" class="btn" bindtap='openFile'>{{item.name}}</view>
+        <view class="btn" >{{item.name}}</view>
       </view>
 
       <view  class="flex-align-center" >
         <button class="btn" id="{{item.id}}" bindtap='tap_print'>打印</button>
-        <button class="btn" bindtap='tap_copy'>地址</button>
+        <button class="btn" data-u="{{item.url}}" data-n="{{item.name}}" bindtap='tap_copy'>复制分享</button>
       </view>
 
     </view>

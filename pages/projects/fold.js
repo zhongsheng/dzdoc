@@ -25,23 +25,53 @@ Page({
           success: function (res) {
             console.log('打开文档成功')
           }
-        })
+        });
       },
       fail: function(e){
-        wx.hideLoading()
+        wx.hideLoading();
         wx.showModal({
           title: '提示',
           content: '加载失败',
+        });
+      }
+    });
+  },
+  tap_view: function(){},
+  tap_copy: function(e){
+    let dataset = e.currentTarget.dataset;
+    let message = app.requestUrl
+        + dataset['u']
+        + "?a=点击链接下载"
+        +  dataset['n'];
+
+    wx.setClipboardData({
+      data: message,
+      success: function(res) {
+        wx.showToast({
+          title: '拷贝成功',
+          icon: 'success',
+          duration: 2000
         })
       }
-    })
+    });
   },
   tapShow: function (e) {
     wx.navigateTo({
       url: 'fold?id=' + e.currentTarget.id + '&name=' + e.currentTarget.dataset.productName,
     });
   },
-
+  tap_print: function(e){
+    http.request({
+      url: app.requestUrl + '/print/' + e.currentTarget.id + '.json',
+      success: function(res){
+        wx.showModal({
+          title: '提示',
+          content: '文件已经发送给打印机,文件较大,请耐心等待',
+        })
+        console.log(res);
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -114,16 +144,8 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  tap_print: function(e){
-    http.request({
-      url: app.requestUrl + '/print/' + e.currentTarget.id + '.json',
-      success: function(res){
-        console.log(res);
-      }
-    });
-  },
-  tap_view: function(){},
-  tap_copy: function(){}
+  }
+
+
 
 });
