@@ -1,12 +1,26 @@
 <view id='main' scroll-y="true">
-  <view wx:for="{{workflow}}" wx:for-item="work" >
+  <view class="item-box" wx:for="{{workflow}}" wx:for-item="work" >
 
-  <view wx:for="{{work['files']}}" class="flex-align-center" >
+    <view class="date">
+      {{work.created_at}}
+    </view>
+    <view class="line"></view>
+    <view>{{work.content}}</view>
 
-    <image class="icon" mode="aspectFit" src="../../assets/images/pdf.png"></image>
-    <view id="{{item.url}}" class="btn" bindtap='openFile'>{{item.name}}</view>
+    <view wx:for="{{work['files']}}">
+      <view class="line"></view>
 
-  </view>
+      <view class="row more flex-align-center">
+        <image class="icon" mode="aspectFit" src="../../assets/images/pdf.png"></image>
+        <view id="{{item.url}}" class="btn" bindtap='openFile'>{{item.name}}</view>
+      </view>
+
+      <view  class="flex-align-center" >
+        <button class="btn" id="{{item.id}}" bindtap='tap_print'>打印</button>
+        <button class="btn" bindtap='tap_copy'>地址</button>
+      </view>
+
+    </view>
 
   </view>
 

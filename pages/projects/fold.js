@@ -1,6 +1,6 @@
-const app = getApp()
-const http = require('../../utils/http.js')
-var thisPage
+const app = getApp();
+const http = require('../../utils/http.js');
+var thisPage;
 
 Page({
 
@@ -13,7 +13,7 @@ Page({
   openFile: function(e) {
     wx.showLoading({
       title: '加载中',
-    })
+    });
     let fileUrl = app.requestUrl + e.currentTarget.id;
     wx.downloadFile({
       url: fileUrl,
@@ -114,5 +114,16 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
-})
+  },
+  tap_print: function(e){
+    http.request({
+      url: app.requestUrl + '/print/' + e.currentTarget.id + '.json',
+      success: function(res){
+        console.log(res);
+      }
+    });
+  },
+  tap_view: function(){},
+  tap_copy: function(){}
+
+});
