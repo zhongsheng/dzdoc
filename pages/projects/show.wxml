@@ -1,2 +1,11 @@
-<!--pages/documents/show.wxml-->
-<text>pages/documents/show.wxml</text>
+<!--index.wxml-->
+<view><button bindtap='tap_create'>新建任务</button></view>
+<view id='main' scroll-y="true">
+  <view wx:for="{{lists}}" class="flex-align-center" >
+
+    <image class="icon" mode="aspectFit" src="../../assets/images/zip.png"></image>
+    <view id="{{item.id}}" data-n='{{item.name}}' data-u='{{item.url}}' class="btn" bindtap='tapShow'>{{item.name}}</view>
+
+  </view>
+
+</view>

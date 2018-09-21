@@ -10,13 +10,18 @@
     "pages/products/show",
     "pages/products/edit",
     "pages/projects/index",
-    "pages/projects/fold"
+    "pages/projects/fold",
+    "pages/projects/show",
+    "pages/projects/new_todo",
+    "pages/projects/new_talk",
+    "pages/projects/todo"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+    
   },
   "tabBar": {
     "borderStyle": "white",

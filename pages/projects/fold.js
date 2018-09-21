@@ -36,6 +36,11 @@ Page({
       }
     });
   },
+  tap_create: function(){
+    wx.navigateTo({
+      url: 'new_talk',
+    })
+  },
   tap_view: function(){},
   tap_copy: function(e){
     let dataset = e.currentTarget.dataset;
@@ -77,13 +82,15 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    wx.setNavigationBarTitle({
+      title: options.name
+    })
+    app.project.todo_id = options.id
     thisPage = this
     http.request({
-      url: app.requestUrl + '/projects/'+ options.id + '.json',
+      url: options.url,
+      //app.requestUrl + '/projects/'+ options.id + '.json',
       success: function(res){
-        wx.setNavigationBarTitle({
-          title: res.data.name
-        })
         // for (let n in res.data) {
         //   // only show the date
         //   res.data[n].updated_at = res.data[n].updated_at.replace(/T.*/,'');

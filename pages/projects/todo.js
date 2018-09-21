@@ -1,39 +1,17 @@
-const app = getApp();
-const http = require('../../utils/http.js');
-var thisPage;
-
+// pages/projects/todo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    lists: []
-  },
-  tap_create: function () {
-    wx.navigateTo({
-      url: 'new_todo',
-    })
+
   },
 
-  tapShow: function (e) {
-    wx.navigateTo({
-      url: 'fold?url=' + e.currentTarget.dataset['u'] + '&name=' + e.currentTarget.dataset['n'] + '&id=' + e.currentTarget.id,
-    });
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: options.name
-    })
-    app.project.id = options.id;
-    console.log(options)
-    thisPage = this
-    app.currentUrl = app.requestUrl + '/projects/' + options.id + '.json'
-
-
 
   },
 
@@ -48,15 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    http.request({
-      url: app.currentUrl,
-      success: function (res) {
 
-        thisPage.setData({
-          lists: res.data
-        })
-      }
-    })
   },
 
   /**
@@ -93,7 +63,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-
-
-
-});
+})

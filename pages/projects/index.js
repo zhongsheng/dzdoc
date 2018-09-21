@@ -13,14 +13,14 @@ Page({
   },
   tapShow: function (e) {
     wx.navigateTo({
-      url: 'fold?id=' + e.currentTarget.id + '&name=' + e.currentTarget.dataset.productName,
+      url: 'show?id=' + e.currentTarget.id + '&name=' + e.currentTarget.dataset['n'],
     });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     thisPage = this
     http.request({
       url: app.requestUrl + '/projects.json',
@@ -70,7 +70,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onLoad()
   },
 
   /**

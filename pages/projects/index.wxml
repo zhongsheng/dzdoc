@@ -3,7 +3,7 @@
   <view wx:for="{{docs}}" class="flex-align-center" >
 
     <image class="icon" mode="aspectFit" src="../../assets/images/fold.png"></image>
-    <view id="{{item.id}}" class="btn" bindtap='tapShow'>{{item.name}}</view>
+    <view id="{{item.id}}" data-n='{{item.name}}' class="btn" bindtap='tapShow'>{{item.name}}</view>
 
   </view>
 

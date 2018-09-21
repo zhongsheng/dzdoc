@@ -23,14 +23,20 @@ App({
   },
 
   requestUrl: "https://crm.dzunion.cn",
-  
+  currentUrl: '',
   authData: {
     user_id: '',
     username: '',
     encrypted_data: '',
     iv: ''
   },
+  project: {
+    id: '',
+    name: '',
+    todo_name: '',
+    todo_id: '',
 
+  },
   globalData: {
     userInfo: null
   }

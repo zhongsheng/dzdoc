@@ -1,3 +1,4 @@
+
 <view id='main' scroll-y="true">
   <view wx:for="{{files}}" class="flex-align-center" >
 
