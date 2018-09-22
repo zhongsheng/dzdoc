@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    files: []
+    files: [],
+    title: ''
   },
   openFile: function(e) {
     wx.showLoading({
@@ -38,7 +39,7 @@ Page({
   },
   tap_create: function(){
     wx.navigateTo({
-      url: 'new_talk',
+      url: 'new_talk?name=' + this.data.title,
     })
   },
   tap_view: function(){},
@@ -96,7 +97,8 @@ Page({
         //   res.data[n].updated_at = res.data[n].updated_at.replace(/T.*/,'');
         // }
         thisPage.setData({
-          workflow: res.data
+          workflow: res.data,
+          title: options.name
         })
       }
     })

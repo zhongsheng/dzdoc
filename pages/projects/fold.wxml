@@ -3,10 +3,12 @@
   <view class="item-box" wx:for="{{workflow}}" wx:for-item="work" >
 
     <view class="date">
-      {{work.created_at}}
+    <text class='alert'>{{work.username}} </text> @ 
+    <text> {{work.created_at}}</text>
+      
     </view>
     <view class="line"></view>
-    <view>{{work.content}}</view>
+    <text>{{work.content}}</text>
 
     <view wx:for="{{work['files']}}">
       <view class="line"></view>

@@ -31,7 +31,7 @@
 
 .flex-justify-center {
     display: flex;
-    flex-flow:row wrap;
+    flex-flow:row nowrap;
     justify-content:center;
     align-items: center;
     text-align: center;
@@ -39,7 +39,7 @@
 
 .flex-align-center {
     display: flex;
-    flex-flow:row wrap;
+    flex-flow:row nowrap;
     align-content: center;
     align-items: center;
 }
@@ -47,7 +47,6 @@
 .row {
     flex-direction: row;
     display: flex;
-    padding: 5px;
 }
 
 /* float been deprecated */
@@ -99,6 +98,7 @@
 }
 .icon {
     width: 30px; height: 30px;
+    flex-shrink: 0;
 }
 
 .date {
@@ -109,7 +109,8 @@
 .more {
     background-image: url("http://img.dzunion.cn/more.png");
     background-position: center right;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
+    padding-right: 15px;
 }
 
 .number {
