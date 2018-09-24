@@ -15,6 +15,13 @@
         <text class="t4">最新动态</text></view>
 
     </view>
+    <view class='section'>
+    <view wx:for="{{news}}">
+    <view id="{{item.task_id}}" data-n='{{item.task}}' data-u='{{item.url}}' class="btn" bindtap='tapShow'>
+    {{item.username}} : 更新 : {{item.project}} --> {{item.task}}</view>
+    </view>
+    
+    </view>
 
 
   </view>

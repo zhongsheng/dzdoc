@@ -8,10 +8,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username: ''
+    username: '',
+    news: null
   },
+  tapShow: function (e) {
 
+    wx.navigateTo({
+      url: '../projects/fold?url=' + e.currentTarget.dataset['u']  
+            + '&name=' + e.currentTarget.dataset['n'] 
+            + '&id=' + e.currentTarget.id,
+    });
+  },
   onLoad: function (options) {
+    thisPage = this
     wx.showTabBar({})
 
     this.setData({
@@ -24,6 +33,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+
+    http.request({
+      url: app.requestUrl + '/workflows.json',
+      success: function(res){
+        thisPage.setData({
+          news: res.data
+        })
+      }
+    })
 
   },
 

@@ -82,26 +82,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    thisPage = this
     console.log(options)
     wx.setNavigationBarTitle({
       title: options.name
     })
     app.project.todo_id = options.id
-    thisPage = this
-    http.request({
-      url: options.url,
-      //app.requestUrl + '/projects/'+ options.id + '.json',
-      success: function(res){
-        // for (let n in res.data) {
-        //   // only show the date
-        //   res.data[n].updated_at = res.data[n].updated_at.replace(/T.*/,'');
-        // }
-        thisPage.setData({
-          workflow: res.data,
-          title: options.name
-        })
-      }
-    })
+    thisPage.url = options.url
+    
 
 
   },
@@ -117,7 +105,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    http.request({
+      url: thisPage.url,
+      //app.requestUrl + '/projects/'+ options.id + '.json',
+      success: function (res) {
+        // for (let n in res.data) {
+        //   // only show the date
+        //   res.data[n].updated_at = res.data[n].updated_at.replace(/T.*/,'');
+        // }
+        thisPage.setData({
+          workflow: res.data
+        })
+      }
+    })
   },
 
   /**
