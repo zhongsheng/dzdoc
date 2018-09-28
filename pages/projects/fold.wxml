@@ -8,7 +8,7 @@
       
     </view>
     <view class="line"></view>
-    <text>{{work.content}}</text>
+    <text selectable='true'>{{work.content}}</text>
 
     <view wx:for="{{work['files']}}">
       <view class="line"></view>
