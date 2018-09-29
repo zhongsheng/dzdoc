@@ -6,7 +6,10 @@
       <textarea class="input-text" name="workflow[content]" placeholder="内容" auto-focus/>
     </view>
 
-
+   <view class="section">
+      <input class="input-text" name="workflow[days]" placeholder='需几天内回复'></input> 
+      
+    </view>
     <view class="hide">
       <input name="workflow[todo_list_id]" value="{{todo_list_id}}" />
       <input name="workflow[user_id]" value="{{user_id}}" />

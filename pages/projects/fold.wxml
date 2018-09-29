@@ -3,9 +3,9 @@
   <view class="item-box" wx:for="{{workflow}}" wx:for-item="work" >
 
     <view class="date">
-    <text class='alert'>{{work.username}} </text> @ 
-    <text> {{work.created_at}}</text>
-      
+      <text class='alert'>{{work.username}} </text> @
+      <text> {{work.created_at}} </text>
+      <text wx:if="{{work.left_days}}"> # 任务时间: {{work.days}} 天 # 剩余:{{work.left_days}} 天</text>
     </view>
     <view class="line"></view>
     <text selectable='true'>{{work.content}}</text>
@@ -24,6 +24,30 @@
       </view>
 
     </view>
+
+    <view class="item-box" wx:for="{{work.replies}}" wx:for-item="reply" >
+
+      <view class="date">
+        <text class='alert'>{{reply.username}} </text> @
+        <text> {{reply.created_at}} </text>
+      </view>
+      <view class="line"></view>
+      <text selectable='true'>{{reply.content}}</text>
+
+      <view wx:for="{{reply['files']}}">
+        <view class="line"></view>
+
+        <view id="{{item.url}}"  class="row more flex-align-center" bindtap='openFile'>
+          <image class="icon" mode="aspectFit" src="../../assets/images/pdf.png"></image>
+          <view class="btn" >{{item.name}}</view>
+        </view>
+
+        <view  class="flex-align-center" >
+          <button class="btn" id="{{item.id}}" bindtap='tap_print'>打印</button>
+          <button class="btn" data-u="{{item.url}}" data-n="{{item.name}}" bindtap='tap_copy'>复制分享</button>
+        </view>
+
+    </view></view>
 
   </view>
 
