@@ -8,8 +8,10 @@
       <text wx:if="{{work.left_days}}"> # 任务时间: {{work.days}} 天 # 剩余:{{work.left_days}} 天</text>
     </view>
     <view class="line"></view>
-    <text selectable='true'>{{work.content}}</text>
-
+     <view class="rich-text-wrp">
+      <rich-text nodes="{{work.content}}" ></rich-text>
+    </view>
+   
     <view wx:for="{{work['files']}}">
       <view class="line"></view>
 
@@ -32,7 +34,10 @@
         <text> {{reply.created_at}} </text>
       </view>
       <view class="line"></view>
-      <text selectable='true'>{{reply.content}}</text>
+       <view class="rich-text-wrp">
+      <rich-text nodes="{{reply.content}}" ></rich-text>
+    </view>
+  
 
       <view wx:for="{{reply['files']}}">
         <view class="line"></view>
